@@ -34,4 +34,13 @@ public class LongestSlideDownTest {
 
         assertEquals(4, LongestSlideDown.longestSlideDown(test));
     }
+
+    @Test
+    public void three_row_pyramid() {
+        int[][] test = new int[][]{{1},
+                {2, 3},
+                {4, 5, 6}
+        };
+        assertEquals(10, LongestSlideDown.longestSlideDown(test));
+    }
 }
