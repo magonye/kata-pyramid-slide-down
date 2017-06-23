@@ -1,13 +1,17 @@
 public class LongestSlideDown {
-    public static int longestSlideDown(int[][] test) {
-        for (int i = test.length-1;i>1;i--){
+    public static int longestSlideDown(int[][] pyramid) {
+        for (int i = pyramid.length-1;i>1;i--){
             for (int j = 0; j<i;j++){
-                test[i-1][j] = test[i-1][j] + (test[i][j]>test[i][j+1]?test[i][j]:test[i][j+1]);
+                pyramid[i-1][j] = pyramid[i-1][j] + getBiggerElement(pyramid,i,j);
             }
         }
-        test[1][0] = test[1][0] + test[0][0];
-        test[1][1] = test[1][1] + test[0][0];
+        pyramid[1][0] = pyramid[1][0] + pyramid[0][0];
+        pyramid[1][1] = pyramid[1][1] + pyramid[0][0];
 
-        return test[1][0]>test[1][1]?test[1][0]:test[1][1];
+        return getBiggerElement(pyramid,1,0);
+    }
+
+    private static int getBiggerElement(int[][] ints, int x, int y) {
+        return ints[x][y]> ints[x][y+1]? ints[x][y]: ints[x][y+1];
     }
 }
