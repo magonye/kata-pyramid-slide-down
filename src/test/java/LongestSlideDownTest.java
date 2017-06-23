@@ -30,9 +30,8 @@ public class LongestSlideDownTest {
     public void simple_pyramid() {
         int[][] test = new int[][]{{1},
                 {2, 3},
-                {4, 5, 6},
         };
 
-        assertEquals(10, LongestSlideDown.longestSlideDown(test));
+        assertEquals(4, LongestSlideDown.longestSlideDown(test));
     }
 }
